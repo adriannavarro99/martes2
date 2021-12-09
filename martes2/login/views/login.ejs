@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body>
+        <main class="d-flex flex-row p-5 justify-content-center">
+            <div title="holdleftsideofthepage" class="border border-primary">
+                <form class="p-4 m-5 bg-primary text-white" action="/register/user" method="POST">
+                    <div class="pageTittle">
+                        <h2>
+                            Register
+                        </h2>
+                    </div>
+                    <div >
+                        <% if( messages.registration ){ %>
+                            <%= messages.registration %>
+                        <% } %>
+                    </div>
+                    <div >
+                        <% if( messages.registerBlank ){ %>
+                            <p class="errortxt">
+                                <%= messages.registerBlank %>
+                            </p>
+                        <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="first_name">
+                            First Name: 
+                        </label>
+                        <input class="form-control" type="text" id="first_name" name="first_name"/>
+                        <div>
+                            <% if( messages.firstName ){ %>
+                                <p class="errortxt">
+                                    <%= messages.firstName %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="last_name">
+                            Last Name: 
+                        </label>
+                        <input class="form-control" type="text" id="last_name" name="last_name"/>
+                        <div >
+                            <% if( messages.lastName ){ %>
+                                <p class="errortxt">
+                                    <%= messages.lastName %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">
+                            Email Address: 
+                        </label>
+                        <input class="form-control" type="email" id="email" name="email"/>
+                        <div>
+                            <% if( messages.email ){ %>
+                                <p class="errortxt">
+                                    <%= messages.email %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="users_password">
+                            Password: 
+                        </label>
+                        <input class="form-control " type="password" name="users_password" id="users_password" />
+                        <div >
+                            <% if( messages.users_password ){ %>
+                                <p class="errortxt">
+                                    <%= messages.users_password %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                   
+
+
+
+
+
+                    <div class="mb-3">
+                        <label class="form-label" for="users_bday">
+                            Birthday: 
+                        </label>
+                        <input class="form-control " type="text" name="users_bday" id="users_bday" />
+                        <div>
+                            <% if( messages.registerDate ){ %>
+                                <p class="errortxt">
+                                    <%= messages.registerDate %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <input class="btn btn-primary mb-3 bg-dark" type="submit" value="Register" name="buttonSubmitForm" id="buttonSubmitForm">
+                    </div>
+                </form>
+            </div>
+            <div  class="border border-danger">
+                <form  action="/login/user" method="POST">
+                    <div class="pageTittle">
+                        <h2>
+                            Login
+                        </h2>
+                    </div>
+                    <div>
+                        <% if( messages.login ){ %>
+                            <%= messages.login %>
+                        <% } %>
+                    </div>
+                    <div >
+                        <% if( messages.loginBlank ){ %>
+                            <p class="errortxt">
+                                <%= messages.loginBlank %>
+                            </p>
+                        <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginEmail">
+                            Email Address: 
+                        </label>
+                        <input class="form-control" type="email" id="loginEmail" name="loginEmail"/>
+                        <div>
+                            <% if( messages.emailBlank ){ %>
+                                <p class="errortxt">
+                                    <%= messages.emailBlank %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="loginUsers_password">
+                            Password: 
+                        </label>
+                        <input class="form-control" type="password" name="loginUsers_password" id="loginUsers_password" />
+                        <div >
+                            <% if( messages.passwordBlank ){ %>
+                                <p class="errortxt">
+                                    <%= messages.passwordBlank %>
+                                </p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <input class="btn btn-primary mb-3 bg-dark" type="submit" value="Login" name="buttonSubmitForm" id="buttonSubmitForm">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
